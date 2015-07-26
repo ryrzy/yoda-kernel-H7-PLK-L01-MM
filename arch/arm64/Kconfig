@@ -71,6 +71,8 @@ config ARM64
 	select RTC_LIB
 	select SPARSE_IRQ
 	select SYSCTL_EXCEPTION_TRACE
+	select HAVE_EFFICIENT_UNALIGNED_ACCESS
+	select DCACHE_WORD_ACCESS
 	select ARCH_HAS_PASR
 	help
 	  ARM 64-bit (AArch64) Linux support.
