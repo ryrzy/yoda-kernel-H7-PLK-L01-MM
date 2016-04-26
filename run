@@ -1,0 +1,7 @@
+clear
+rm /home/ryrzy/kernel/output/lib/modules/*.ko
+rm /home/ryrzy/kernel/output/boot.img-zImage
+make ARCH=arm64 O=../kernel_out h7-yoda_defconfig
+make ARCH=arm64 O=../kernel_out -j3
+find /home/ryrzy/kernel/kernel_out -name "*.ko" -exec cp {} /home/ryrzy/kernel/output/lib/modules \;
+cp /home/ryrzy/kernel/kernel_out/arch/arm64/boot/Image /home/ryrzy/kernel/output/boot.img-zImage
